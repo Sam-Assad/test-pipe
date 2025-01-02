@@ -18,11 +18,15 @@ jobs:
           branch_name="${GITHUB_REF#refs/heads/}"
           echo "This workflow is running on branch: $branch_name"
       
+      # - name: Install Java
+      #   uses: actions/setup-java@v4
+      #   with:
+      #     java-version: 17
+      #     distribution: 'adopt'
+
       - name: Install Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: 17
-          distribution: 'adopt'
+        run: | 
+         sudo apt install -y openjdk-17-jdk
 
       - name: Check Java Version
         run: |
