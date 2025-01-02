@@ -1,14 +1,13 @@
 name: Java CI With Gradle
 
 on: 
-  #push:
-   #branches:
-    # - test-pipeline
-  workflow_dispatch:
+  push:
+   branches:
+    - test-pipeline
 
 jobs:
-  print-branch:
-    runs-on: ubuntu-latest  # Run on the latest Ubuntu
+  Build:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
@@ -18,3 +17,12 @@ jobs:
         run: |
           branch_name="${GITHUB_REF#refs/heads/}"
           echo "This workflow is running on branch: $branch_name"
+      
+      - name: Install Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+
+      - name: Check Java Version
+        run: |
+          java --version
