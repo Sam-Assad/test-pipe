@@ -1,7 +1,9 @@
 name: Java CI With Gradle
 
 on: 
-  workflow_dispatch:
+  push:
+   branches:
+     - test-pipeline
 
 jobs:
   print-branch:
