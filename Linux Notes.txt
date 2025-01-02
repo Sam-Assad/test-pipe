@@ -1,0 +1,6 @@
+- Kernel is hardware management ( memory - storage ) , Interface between applications and hardware
+- !(Command Number) : ! then command number in history will repeat this command again like history is 
+1 ls
+2 cd 
+3 cp f1 /home/
+Then press this !2  ==> This will perform cd command 
