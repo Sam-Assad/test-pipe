@@ -6,7 +6,7 @@ on:
     - test-pipeline
 
 jobs:
-  Build:
+  Preparing:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,3 +27,9 @@ jobs:
       - name: Check Java Version
         run: |
           java --version
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v3 
+
+      - name: Verify Gradle version
+        run: gradle -v
